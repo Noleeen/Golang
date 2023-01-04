@@ -3,22 +3,14 @@ package main
 import "fmt"
 
 func main() {
+	//var arr []string
+	//arr[0] = "2"  будет ОШИБКА так как не инициализирована ячейка памяти для слайса
 
-	number := 5
-	var p *int
-	p = &number
-	fmt.Println(p)
-	*p = 10
-	fmt.Println(p)
-	fmt.Println(number)
+	arr := make([]string, 5, 15) // 15 - capasity  ЁМКОСТЬ !!!
+	arr[2] = "7"
 
-	message := "i am learning golang"
-	printMsg(&message) // & означает что мы передаём аргументом указатель (ссылку на ячейку в памяти)
-	fmt.Println(message)
-	fmt.Println(&message)
-}
+	fmt.Println(arr)
+	fmt.Println(len(arr))
+	fmt.Println(cap(arr))
 
-func printMsg(msg *string) { // * означает что мы принимаем не строку, а указатель(ссылку) на строку
-	*msg += "\n it's very well"
-	//fmt.Println(msg)
 }
